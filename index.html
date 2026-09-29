@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>score tracker</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <header class="header">
+
+      <div>
+        <p class="eyebrow">academic dashboard</p>
+
+        <h1>score tracker</h1>
+
+        <p class="subtitle">
+          track papers, thresholds, and compounded test scores.
+        </p>
+      </div>
+
+      <button
+        id="addTestBtn"
+        class="primary-btn"
+        type="button"
+      >
+        + add test
+      </button>
+
+    </header>
+
+
+    <!-- create test -->
+
+    <section
+      id="testForm"
+      class="panel hidden"
+    >
+
+      <div class="panel-header">
+
+        <h2>new test</h2>
+
+        <p>
+          set the thresholds for the final combined score.
+        </p>
+
+      </div>
+
+
+      <form id="createTestForm">
+
+        <div class="form-grid">
+
+          <div class="field field-wide">
+
+            <label for="testName">
+              test name
+            </label>
+
+            <input
+              id="testName"
+              type="text"
+              placeholder="e.g. BAAO round 1"
+              required
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="testRed">
+              red below
+            </label>
+
+            <input
+              id="testRed"
+              type="number"
+              step="any"
+              value="0"
+              required
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="testYellow">
+              yellow from
+            </label>
+
+            <input
+              id="testYellow"
+              type="number"
+              step="any"
+              value="30"
+              required
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="testGreen">
+              green from
+            </label>
+
+            <input
+              id="testGreen"
+              type="number"
+              step="any"
+              value="40"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <p class="threshold-help">
+          red &lt; yellow · yellow ≥ yellow · green ≥ green
+        </p>
+
+
+        <div class="form-actions">
+
+          <button
+            type="submit"
+            class="primary-btn"
+          >
+            create test
+          </button>
+
+          <button
+            type="button"
+            id="cancelTestBtn"
+            class="secondary-btn"
+          >
+            cancel
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+
+    <!-- tests -->
+
+    <section id="testsContainer"></section>
+
+
+    <!-- empty state -->
+
+    <section
+      id="emptyState"
+      class="empty-state"
+    >
+
+      <div class="empty-icon">
+        δ
+      </div>
+
+      <h2>no tests yet</h2>
+
+      <p>
+        add your first test and start tracking those numbers.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
